@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Url Parsing</title>
+    <script src="Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="Scripts/ParseUrl.js" type="text/javascript"></script>
+    <style type="text/css">
+        body
+        {
+            color: #666464;
+            font-family: Arial,Helvetica,sans-serif;
+            font-size: 12px;
+        }
+        .main
+        {
+            width: 960px;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h3>
+            Sample content without url parsing</h3>
+        <div>
+            https://www.google.co.in/ https://www.google.co.in/fff a http://tokbox.com/opentok/api/tgdsdf1
+            If http: www. you want to accept http://tokbox.com/opentok/api/tgdsdf http://www.google.com?var1=value1&var2=value2
+            only numbers, https://mail.google.com/mail/u/0/?sel=4 use /[^0-9 ]/g and for accepting
+            only alphabets, use /[^a-zA-Z ]/g. Also note that a user can right click the textbox
+            and choose paste from the context menu. In such cases, the blur event detects the
+            non-alphanumeric characters as soon as the textbox looses http://bloggeek.me/webrtc-rising-tide/
+            focus. http://tripflock.com/Community/Carribean-Travel second http://tokbox.com/opentok/api/ggtt
+            caps HTTP://TOKBOX.COM/OPENTOK/API/
+        </div>
+        <br />
+        <br />
+        <h3>
+            Sample content with url parsing</h3>
+        <div class="desc">
+            https://www.google.co.in/ https://www.google.co.in/fff a http://tokbox.com/opentok/api/tgdsdf1
+            If http: www. you want to accept http://tokbox.com/opentok/api/tgdsdf http://www.google.com?var1=value1&var2=value2
+            only numbers, https://mail.google.com/mail/u/0/?sel=4 use /[^0-9 ]/g and for accepting
+            only alphabets, use /[^a-zA-Z ]/g. Also note that a user can right click the textbox
+            and choose paste from the context menu. In such cases, the blur event detects the
+            non-alphanumeric characters as soon as the textbox looses http://bloggeek.me/webrtc-rising-tide/
+            focus. http://tripflock.com/Community/Carribean-Travel second http://tokbox.com/opentok/api/ggtt
+            caps HTTP://TOKBOX.COM/OPENTOK/API/
+        </div>
+        <br />
+        <hr />
+        <br />
+        <h3>
+            Sample content without url parsing</h3>
+        <div id="divTest2">
+        </div>
+        <br />
+        <br />
+        <h3>
+            Sample content with url parsing</h3>
+        <div class='type2'>
+        </div>
+        <br />
+        <br />
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            // Example: 1
+            // It will read text of '.desc' and replace all url kinks with anchor tags
+            $('.desc').parseUrlLink();
+            $('#divTest2').html('Lorem Ipsum is simply dummy text of the printing and typesetting industry. http://tokbox.com/opentok/libraries/client/js/reference/Session.html#disconnect Lorem Ipsum is simply dummy text of the printing and typesetting industry. http://tokbox.com/opentok/libraries/client/js/reference/Session.html#disconnect Lorem Ipsum is simply dummy text of the printing and typesetting industry. http://example.com/index.html?param=1&anotherParam=2 Lorem Ipsum is simply dummy text of the printing and typesetting industry.');
+
+            $('.type2').parseUrlLink({
+                text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. http://tokbox.com/opentok/libraries/client/js/reference/Session.html#disconnect Lorem Ipsum is simply dummy text of the printing and typesetting industry. http://tokbox.com/opentok/libraries/client/js/reference/Session.html#disconnect Lorem Ipsum is simply dummy text of the printing and typesetting industry. http://example.com/index.html?param=1&anotherParam=2 Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+            });
+        });
+        
+    </script>
+</body>
+</html>
