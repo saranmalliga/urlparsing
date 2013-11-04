@@ -54,12 +54,6 @@
                 if (urlExp.test(o.link)) {
                     o.tag = o.template;
                     o.tag = o.tag.replace('{0}', (str === 'www.' ? 'http://' + o.link : o.link)).replace('{1}', o.link);
-                    if (o.link.indexOf('+') > -1) {
-                        o.templink = o.link.replace(new RegExp('\\+', 'gi'), '%2B');
-                        o.result = o.result.split(o.link).join(o.templink);
-                        o.text = o.text.split(o.link).join(o.templink);
-                        o.link = o.templink;
-                    }
                     if (o.prevtag.length === 0) {
                         o.result = o.result.replace(o.link, o.tag);
                     } else {
